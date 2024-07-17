@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bv7r2jfx248je"]
+[gd_scene load_steps=15 format=3 uid="uid://bv7r2jfx248je"]
 
 [ext_resource type="Script" path="res://MainSC1.gd" id="1_pt5pb"]
 [ext_resource type="Script" path="res://border box.gd" id="1_sdu3y"]
@@ -29,6 +29,8 @@ disable_receive_shadows = true
 [sub_resource type="PlaneMesh" id="PlaneMesh_bi3ux"]
 material = SubResource("StandardMaterial3D_3cb8o")
 size = Vector2(26, 13)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0vjmx"]
 
 [node name="MainSC" type="Node3D"]
 script = ExtResource("1_pt5pb")
@@ -302,3 +304,7 @@ transform = Transform3D(2.53854, 0, 0, 0, 2.53854, 0, 0, 0, 1, -5.04976, -1.2636
 visible = false
 path1 = "res://quizpage1.tscn"
 path2 = "res://quizpage2.tscn"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.37102, 0, 0, 0, 4.37102, 0, 0, 0, 1, 6.81743, 0.297678, 1.73753)
+mesh = SubResource("BoxMesh_0vjmx")
