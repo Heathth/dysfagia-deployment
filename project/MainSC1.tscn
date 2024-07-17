@@ -1,0 +1,304 @@
+[gd_scene load_steps=14 format=3 uid="uid://bv7r2jfx248je"]
+
+[ext_resource type="Script" path="res://MainSC1.gd" id="1_pt5pb"]
+[ext_resource type="Script" path="res://border box.gd" id="1_sdu3y"]
+[ext_resource type="PackedScene" uid="uid://v4yfwt685nv6" path="res://button3d.tscn" id="2_0mjkd"]
+[ext_resource type="PackedScene" uid="uid://dvrkwn06uyp5h" path="res://camera.tscn" id="3_4q4gv"]
+[ext_resource type="PackedScene" uid="uid://bual2eoavelvk" path="res://world.tscn" id="4_hip45"]
+[ext_resource type="Texture2D" uid="uid://bdo4my1ubwt1j" path="res://title.png" id="4_vpufo"]
+[ext_resource type="Material" uid="uid://0wfedb4af7jq" path="res://Backbluer.tres" id="5_can8p"]
+[ext_resource type="PackedScene" uid="uid://csnmkabjddx1w" path="res://QuizButton.tscn" id="7_u7aoc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fgbb1"]
+transparency = 1
+albedo_texture = ExtResource("4_vpufo")
+texture_filter = 1
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nac0y"]
+material = ExtResource("5_can8p")
+size = Vector2(80, 60)
+
+[sub_resource type="SystemFont" id="SystemFont_x6m8t"]
+subpixel_positioning = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3cb8o"]
+albedo_color = Color(0.979013, 0.837545, 0.802481, 1)
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bi3ux"]
+material = SubResource("StandardMaterial3D_3cb8o")
+size = Vector2(26, 13)
+
+[node name="MainSC" type="Node3D"]
+script = ExtResource("1_pt5pb")
+
+[node name="Cam" parent="." instance=ExtResource("3_4q4gv")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.42973, -1.21701, 0)
+startzoommod = 40.0
+boundsy = 30
+
+[node name="World" parent="." instance=ExtResource("4_hip45")]
+
+[node name="border box" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.187233, 0.0936165, 0)
+script = ExtResource("1_sdu3y")
+pos1 = Vector2(50, 30)
+pos2 = Vector2(-50, -30)
+
+[node name="Center2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.5)
+material_override = SubResource("StandardMaterial3D_fgbb1")
+cast_shadow = 0
+mesh = SubResource("PlaneMesh_nac0y")
+
+[node name="Label3D" type="Label3D" parent="Center2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.12211, 0.5, -0.93311)
+double_sided = false
+alpha_cut = 1
+modulate = Color(0.143103, 0.167713, 0.23261, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Syöttämiseen ja
+ nielemiseen 
+liittyvät haasteet
+"
+font = SubResource("SystemFont_x6m8t")
+font_size = 350
+outline_size = 0
+
+[node name="Label3D2" type="Label3D" parent="Center2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.12211, 0.5, 4.77163)
+double_sided = false
+alpha_cut = 1
+modulate = Color(0.143103, 0.167713, 0.23261, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Lopputesti avautuu, kun olet käynyt
+läpi suoritettavat osiot
+"
+font = SubResource("SystemFont_x6m8t")
+font_size = 200
+outline_size = 0
+
+[node name="Node3D" type="Node3D" parent="Center2"]
+transform = Transform3D(0.999999, 0, 0, 0, -4.37113e-08, 0.999999, 0, -0.999998, -4.37112e-08, -21.592, 0.599999, -9.75178)
+
+[node name="Label3D3" type="Label3D" parent="Center2/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 9.48677e-20, 0, -2.5411e-21, 1, 4, 3.30539, 0)
+alpha_cut = 1
+outline_modulate = Color(0, 0, 0, 0)
+text = "Nielemisen
+Normaali 
+Fysiologia"
+font = SubResource("SystemFont_x6m8t")
+font_size = 200
+outline_size = 0
+
+[node name="Label3D2" type="Label3D" parent="Center2/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 2.71051e-20, 0, -8.47033e-22, 1, -4, 3.1018, 0)
+alpha_cut = 1
+outline_modulate = Color(0, 0, 0, 0)
+text = "Anatomia
+"
+font = SubResource("SystemFont_x6m8t")
+font_size = 230
+outline_size = 0
+
+[node name="Buton" parent="Center2/Node3D" instance=ExtResource("2_0mjkd")]
+transform = Transform3D(1, 0, 0, 0, 1, 6.77626e-20, 0, -1.69407e-21, 1, 4, 0, 0)
+path = "res://NormFysSC.tscn"
+
+[node name="Buton2" parent="Center2/Node3D" instance=ExtResource("2_0mjkd")]
+transform = Transform3D(1, 0, 0, 0, 1, 2.71051e-20, 0, -8.47033e-22, 1, -4, 0, 0)
+path = "res://anatSC.tscn"
+
+[node name="Node3D2" type="Node3D" parent="Center2"]
+transform = Transform3D(0.999999, 0, 0, 0, -4.37113e-08, 0.999999, 0, -0.999998, -4.37112e-08, 11.093, 0.599999, -12.0225)
+
+[node name="Label3D3" type="Label3D" parent="Center2/Node3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 9.48677e-20, 0, -2.5411e-21, 1, 4, 1.12979, 0)
+alpha_cut = 1
+outline_modulate = Color(0, 0, 0, 0)
+text = "Nielemis-
+vaikeuksia
+aiheuttavia
+tekijöitä
+"
+font = SubResource("SystemFont_x6m8t")
+font_size = 250
+outline_size = 0
+
+[node name="Label3D2" type="Label3D" parent="Center2/Node3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 2.71051e-20, 0, -8.47033e-22, 1, -4, 3.2036, 0)
+alpha_cut = 1
+outline_modulate = Color(0, 0, 0, 0)
+text = "Dysfagia
+"
+font = SubResource("SystemFont_x6m8t")
+font_size = 230
+outline_size = 0
+
+[node name="Buton2" parent="Center2/Node3D2" instance=ExtResource("2_0mjkd")]
+transform = Transform3D(1, 0, 0, 0, 1, 4.06576e-20, 0, -8.47033e-22, 1, -4, 0, 0)
+
+[node name="Center" type="MeshInstance3D" parent="Center2"]
+transform = Transform3D(0.721783, 0, 0, 0, 0.999999, -6.75016e-14, 0, 8.52651e-14, 1.22258, -21.665, -0.145715, -12.1215)
+mesh = SubResource("PlaneMesh_bi3ux")
+skeleton = NodePath("../..")
+
+[node name="Label3D4" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, -7.95793e-09, 0, 7.95793e-09, 1, -21.6875, 17.6453, 0.099998)
+alpha_cut = 1
+modulate = Color(0.143103, 0.167713, 0.23261, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Prototyypissä suoritettava osio
+"
+font = SubResource("SystemFont_x6m8t")
+font_size = 230
+outline_size = 0
+
+[node name="Label3D2" type="Label3D" parent="."]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999998, -1.56319e-13, 0, 1.06581e-14, 0.999999, 29.0514, 19.3459, 0.0999994)
+alpha_cut = 1
+outline_modulate = Color(0, 0, 0, 0)
+text = "Pää- ja
+Kaulasyöpä"
+font = SubResource("SystemFont_x6m8t")
+font_size = 230
+outline_size = 0
+
+[node name="Buton2" parent="Label3D2" instance=ExtResource("2_0mjkd")]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 1.35525e-20, 0, -2.5411e-21, 0.999999, 0, -3.20056, 0)
+
+[node name="Label3D3" type="Label3D" parent="."]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999998, -1.56319e-13, 0, 1.06581e-14, 0.999999, 29.0514, 6.3667, 0.0999994)
+alpha_cut = 1
+modulate = Color(0.0400292, 0.122496, 0.185641, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Aivoveren-
+kiertohäiriö"
+font = SubResource("SystemFont_x6m8t")
+font_size = 230
+outline_size = 0
+
+[node name="Buton2" parent="Label3D3" instance=ExtResource("2_0mjkd")]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 1.35525e-20, 0, -2.5411e-21, 0.999999, 0, -3.20056, 0)
+
+[node name="Label3D5" type="Label3D" parent="."]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999998, -1.56319e-13, 0, 1.06581e-14, 0.999999, 29.0514, -1.26812, 0.0999994)
+alpha_cut = 1
+modulate = Color(0.0400292, 0.122496, 0.185641, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Alzheimerin
+Tauti"
+font = SubResource("SystemFont_x6m8t")
+font_size = 230
+outline_size = 0
+
+[node name="Buton2" parent="Label3D5" instance=ExtResource("2_0mjkd")]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 1.35525e-20, 0, -2.5411e-21, 0.999999, 0, -3.20056, 0)
+
+[node name="Label3D6" type="Label3D" parent="."]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999998, -1.56319e-13, 0, 1.06581e-14, 0.999999, 29.0514, -8.93487, 0.0999994)
+alpha_cut = 1
+modulate = Color(0.0400292, 0.122496, 0.185641, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Parkinsonin
+Tauti"
+font = SubResource("SystemFont_x6m8t")
+font_size = 230
+outline_size = 0
+
+[node name="Buton2" parent="Label3D6" instance=ExtResource("2_0mjkd")]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 1.35525e-20, 0, -2.5411e-21, 0.999999, 0, -3.20056, 0)
+
+[node name="Label3D7" type="Label3D" parent="."]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999998, -1.56319e-13, 0, 1.06581e-14, 0.999999, 29.0514, -16.5541, 0.0999994)
+alpha_cut = 1
+modulate = Color(0.0400292, 0.122496, 0.185641, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Kehitys-
+vammat"
+font = SubResource("SystemFont_x6m8t")
+font_size = 230
+outline_size = 0
+
+[node name="Buton2" parent="Label3D7" instance=ExtResource("2_0mjkd")]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 1.35525e-20, 0, -2.5411e-21, 0.999999, 0, -3.20056, 0)
+
+[node name="Label3D8" type="Label3D" parent="."]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999998, -1.56319e-13, 0, 1.06581e-14, 0.999999, 12.6551, -5.12743, 0.0999994)
+alpha_cut = 1
+modulate = Color(0.0400292, 0.122496, 0.185641, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Iän Tuomat
+Nielemis
+-muutkoset"
+font = SubResource("SystemFont_x6m8t")
+font_size = 200
+outline_size = 0
+
+[node name="Buton2" parent="Label3D8" instance=ExtResource("2_0mjkd")]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 1.35525e-20, 0, -2.5411e-21, 0.999999, 0, -3.20056, 0)
+
+[node name="Label3D9" type="Label3D" parent="."]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999998, -1.56319e-13, 0, 1.06581e-14, 0.999999, -22.8837, -0.532382, 0.0999994)
+alpha_cut = 1
+modulate = Color(0.0400292, 0.122496, 0.185641, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Ongelma- ja
+Hätätilanteet
+Syöttäessä"
+font = SubResource("SystemFont_x6m8t")
+font_size = 200
+outline_size = 0
+
+[node name="Buton2" parent="Label3D9" instance=ExtResource("2_0mjkd")]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 1.35525e-20, 0, -3.38813e-21, 0.999999, 0, -3.50596, 0)
+
+[node name="Label3D10" type="Label3D" parent="."]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999998, -1.56319e-13, 0, 1.06581e-14, 0.999999, -4.33895, -16.0753, 0.0999994)
+alpha_cut = 1
+outline_modulate = Color(0, 0, 0, 0)
+text = "Sopiva
+Ruoka"
+font = SubResource("SystemFont_x6m8t")
+font_size = 230
+outline_size = 0
+
+[node name="Buton2" parent="Label3D10" instance=ExtResource("2_0mjkd")]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 1.35525e-20, 0, -2.5411e-21, 0.999999, 0, -3.20056, 0)
+
+[node name="Label3D11" type="Label3D" parent="."]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999998, -1.56319e-13, 0, 1.06581e-14, 0.999999, -18.1053, -13.1303, 0.0999994)
+alpha_cut = 1
+outline_modulate = Color(0, 0, 0, 0)
+text = "Syöttö ja
+Ruokailu-
+tilanteet"
+font = SubResource("SystemFont_x6m8t")
+font_size = 230
+outline_size = 0
+
+[node name="Buton2" parent="Label3D11" instance=ExtResource("2_0mjkd")]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 1.35525e-20, 0, -3.38813e-21, 0.999999, 0, -3.6115, 0)
+
+[node name="Label3D12" type="Label3D" parent="."]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999998, -1.56319e-13, 0, 1.06581e-14, 0.999999, -26.0501, -13.1303, 0.0999994)
+alpha_cut = 1
+outline_modulate = Color(0, 0, 0, 0)
+text = "Nielemistä 
+Helpottavia 
+Keinoja"
+font = SubResource("SystemFont_x6m8t")
+font_size = 230
+outline_size = 0
+
+[node name="Buton2" parent="Label3D12" instance=ExtResource("2_0mjkd")]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 1.35525e-20, 0, -3.38813e-21, 0.999999, 0, -3.6115, 0)
+
+[node name="SCbutton" parent="." instance=ExtResource("7_u7aoc")]
+transform = Transform3D(2.53854, 0, 0, 0, 2.53854, 0, 0, 0, 1, -5.04976, -1.26369, 0.545417)
+visible = false
+path1 = "res://quizpage1.tscn"
+path2 = "res://quizpage2.tscn"

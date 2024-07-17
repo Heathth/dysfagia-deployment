@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnk1biuqcsc4s"]
+
+[ext_resource type="PackedScene" uid="uid://dvrkwn06uyp5h" path="res://camera.tscn" id="1_8babi"]
+[ext_resource type="PackedScene" uid="uid://bfk2tcj7uckq3" path="res://MainSC.tscn" id="3_3pbpj"]
+[ext_resource type="PackedScene" uid="uid://bual2eoavelvk" path="res://world.tscn" id="3_8vmwk"]
+
+[node name="Main" type="Node"]
+
+[node name="cam" parent="." instance=ExtResource("1_8babi")]
+
+[node name="world" parent="." instance=ExtResource("3_8vmwk")]
+
+[node name="MainSC" parent="." instance=ExtResource("3_3pbpj")]
