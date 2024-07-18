@@ -91,8 +91,8 @@ jotta saat paremman kuvan valmiin työn
 sisällöstä.
 
 Kun olet lukenut kaikki osiot läpi, voit siirtyä 
-lopputestiin. Lopputestiä voi yrittää niin monta
-kertaa, kuin tarvitsee
+lopputestiin. Lopputestin ja materiaalin välillä
+voi liikkua vapaasti testin aloittamisen jälkeen.
 
 "
 font = SubResource("SystemFont_y10d5")

@@ -7,7 +7,7 @@
 [ext_resource type="Material" uid="uid://cpsdmruhcu315" path="res://Backwhite.tres" id="6_bdkwb"]
 [ext_resource type="Texture2D" uid="uid://3opcmbbp5e28" path="res://kysymyspallot.png" id="7_df4i2"]
 [ext_resource type="PackedScene" uid="uid://drdjmvmh04u56" path="res://button3d_back.tscn" id="7_up2ol"]
-[ext_resource type="PackedScene" uid="uid://bcjpe54mu0d2i" path="res://quizimput.tscn" id="8_2h2gb"]
+[ext_resource type="PackedScene" uid="uid://bcjpe54mu0d2i" path="res://question_field.tscn" id="8_2h2gb"]
 [ext_resource type="Script" path="res://numberpic.gd" id="10_6oqg7"]
 [ext_resource type="PackedScene" uid="uid://bix8ryww28cnm" path="res://numberbutton.tscn" id="11_384fh"]
 [ext_resource type="PackedScene" uid="uid://b0qokri8vjqj1" path="res://button check.tscn" id="11_ovgdv"]

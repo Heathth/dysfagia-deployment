@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://csnmkabjddx1w"]
 
 [ext_resource type="Script" path="res://Button_test navigation.gd" id="1_nlmb5"]
+[ext_resource type="Material" uid="uid://c1g1llilwiy3m" path="res://kiduhok.tres" id="2_3s3mf"]
 [ext_resource type="Material" uid="uid://vaggfx3q0gvd" path="res://Backblue.tres" id="2_dhcgr"]
-[ext_resource type="Material" uid="uid://cif70qswmk5sq" path="res://Backblueaaa.tres" id="2_yfghi"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_waerw"]
-material = ExtResource("2_yfghi")
+material = ExtResource("2_3s3mf")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eoyae"]
 

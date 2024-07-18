@@ -1,23 +1,24 @@
 extends Node3D
 
 @export var index = 0
-@export var namex := "error"
+@export var qnum := 0
 
 var hovering = false
 
 func _ready():
 	$Label3D4.hide()
-	$Name.text = namex
 
 func _on_area_3d_mouse_entered():
 	hovering = true
 	Global.hovering = true
+	#print(index)
 	$quizimput/Highlish.visible = true
 	Global.listindex = index
 
 func _on_area_3d_mouse_exited():
 	hovering = false
 	Global.hovering = false
+	#print(index)
 	$quizimput/Highlish.visible = false
 
 func _unhandled_input(event):
@@ -33,8 +34,10 @@ func _unhandled_input(event):
 				$"../../Numberer".position.y = global_transform.origin.y
 				$"../../Numberer".visible = true
 
-		if Global.answerstate2[index] > 0:
-			$Label3D4.text = Global.answerlist2[Global.answerstate2[index]]
+		if Global.m_answerstate[qnum][index] > 0:
+			#print(Global.answerstate[index])
+			$Label3D4.text = Global.m_answerlist[qnum][Global.m_answerstate[qnum][index]]
 			$Label3D4.show()
-		else:
+		elif Global.m_answerstate[qnum][index] == 0:
 			$Label3D4.hide()
+

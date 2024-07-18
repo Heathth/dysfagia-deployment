@@ -27,9 +27,9 @@ func _on_area_3d_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed == true:
 			#OS.shell_open("https://forms.gle/jHfi7CDb4fhzXy2K7")
-			if Global.q2 == true:
+			if Global.quizpage == 2:
 				get_tree().change_scene_to_file(path3)
-			elif Global.q1 == true:
+			elif Global.quizpage == 1:
 				get_tree().change_scene_to_file(path2)
 			else:
 				get_tree().change_scene_to_file(path1)

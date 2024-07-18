@@ -17,52 +17,83 @@ var selected = 0
 
 var pages := [1, 0, 0]
 
-# 1
+var quizpage := 0
 
-var answerstate := [0, 0, 0, 0, 0, 0]
+############################################### Metaarrays
+
+@onready var m_answerstate := [
+	"error: incorrectly entered answerstate", 
+	answerstate_1, 
+	answerstate_2,
+	answerstate_3
+	]
+
+@onready var m_answerlist :=[
+	"error: incorrectly entered answerlist",
+	answerlist_1,
+	answerlist_2,
+	answerlist_3
+	]
+
+@onready var m_answersq := [
+	"error: incorrectly entered answersq",
+	answersq_1,
+	answersq_2,
+	answersq_3
+	]
+
+@onready var m_q = [
+	"error: incorrectly entered q",
+	q_1,
+	q_2,
+	q_3
+	]
 
 
-var answerlist :=[
+############################################### 1
+
+var answerstate_1 := [0, 0, 0, 0, 0, 0]
+
+var answerlist_1 :=[
 	"",
 	"PEHMEÄ SUULAKI",
 	"KURKUNKANSI",
 	"HENKITORVI",
 	"NENÄONTELO",
 	"SUUONTELO",
-	"KURKUNPÄÄ"
+	"ÄÄNIHUULET"
 	]
 
-var answersq1 := [4, 5, 1, 2, 6, 3]
-var q1 = false
+var answersq_1 := [4, 5, 1, 2, 6, 3]
+var q_1 = false
 
-# 2
+############################################### 2
 
-var answerstate2 := [
-	0, 0, 0, 0, 
-	0, 0, 0, 0, 
-	0, 0, 0, 0, 
-	0, 0, 0, 0
-]
+var answerstate_2 := [0, 0, 0]
 
-var answerlist2 :=[
+var answerlist_2 :=[
 	"",
-	"A",
-	"B",
-	"C",
-	"-",
+	"Faryngeaalinen vaihe ",
+	"Esofageaalinen vaihe ",
+	"Oraalinen vaihe "
 	]
 
-var answersq2 := [
-	3, 3, 1, 1,
-	2, 1, 2, 2,
-	4, 2, 1, 2,
-	2, 4, 3 ,4
-]
+var answersq_2 := [3, 1, 2,]
 
-var q2 = false
+var q_2 = false
 
+############################################### 3
 
+var answerstate_3 := [0, 0, 0]
 
-func _process(delta):
-	if !scene == opensc:
-		pass
+var answerlist_3 :=[
+	"",
+	"Ruokapala kulkee nielun läpi kohti ruokatorvea. Refleksien ohjaamaa toimintaa.",
+	"Ruokapala kulkee ruokatorvessa kohti mahalaukkua peristaltiikan kuljettamana. ",
+	"Pääosin tahdonalaista toimintaa, joka aloittaa ruuansulatuksen. Vaihe päättyy reflektiivisen toiminnan käynnistyessä. ",
+	]
+
+var answersq_3 := [3, 1, 2,]
+
+var q_3 = false
+

@@ -4,6 +4,8 @@ extends Node3D
 @export var namee = "tyhjä"
 @onready var hovering = false
 
+@export var qnum := 0
+
 func _ready():
 	$Label3D4.text = namee
 
@@ -23,16 +25,15 @@ func _unhandled_input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed == true: 
 			if hovering == true:
 				if Global.listnumber == number:
-					for n in Global.answerstate.size():
-						if  Global.answerstate[n] == Global.listnumber:
-							Global.answerstate[n] = 0
+					for n in Global.m_answerstate[qnum].size():
+						if  Global.m_answerstate[qnum][n] == Global.listnumber:
+							Global.m_answerstate[qnum][n] = 0
 
-				Global.answerstate[Global.selected] = Global.listnumber
-				print(Global.answerstate)
+				Global.m_answerstate[qnum][Global.selected] = Global.listnumber
 
 		var ok = false
-		for n in Global.answerstate.size():
-			if  Global.answerstate[n] == number:
+		for n in Global.m_answerstate[qnum].size():
+			if  Global.m_answerstate[qnum][n] == number:
 				$quizimput/Used.show()
 				ok = true
 		if ok == false:

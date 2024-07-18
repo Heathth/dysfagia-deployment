@@ -1,7 +1,6 @@
 extends Node3D
 
 var outline := false
-@export var path := "path"
 
 func _on_area_3d_mouse_entered():
 
@@ -27,7 +26,8 @@ func _on_area_3d_input_event(camera, event, position, normal, shape_idx):
 			if !%Cam == null:
 				Global.mainzoom = %Cam.get_child(0).position.z
 				Global.campp = Vector2(%Cam.position.x, %Cam.position.y)
-			get_tree().change_scene_to_file(path)
+			get_tree().change_scene_to_file(get_parent().n_p_path)
+			print(get_parent().n_p_path)
 
 
 

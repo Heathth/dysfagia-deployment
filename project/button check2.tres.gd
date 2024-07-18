@@ -1,6 +1,7 @@
 extends Node3D
 
 var outline := false
+@export var n_p_path = "path"
 
 func _on_area_3d_mouse_entered():
 

@@ -1,30 +1,30 @@
 [gd_scene load_steps=19 format=3 uid="uid://b266d2qci6vgo"]
 
-[ext_resource type="Material" uid="uid://cmushre60n2i6" path="res://backgreen.tres" id="1_20fc7"]
-[ext_resource type="PackedScene" uid="uid://bual2eoavelvk" path="res://world.tscn" id="2_jk6f3"]
-[ext_resource type="PackedScene" uid="uid://dvrkwn06uyp5h" path="res://camera.tscn" id="3_5p7er"]
-[ext_resource type="Material" uid="uid://0wfedb4af7jq" path="res://Backbluer.tres" id="4_wydm4"]
-[ext_resource type="Material" uid="uid://cpsdmruhcu315" path="res://Backwhite.tres" id="5_byb2p"]
-[ext_resource type="PackedScene" uid="uid://drdjmvmh04u56" path="res://button3d_back.tscn" id="6_22vc7"]
-[ext_resource type="Texture2D" uid="uid://3opcmbbp5e28" path="res://kysymyspallot.png" id="7_04vj5"]
-[ext_resource type="PackedScene" uid="uid://bcjpe54mu0d2i" path="res://quizimput.tscn" id="8_b5jsc"]
-[ext_resource type="Script" path="res://numberpic.gd" id="9_d0xku"]
-[ext_resource type="PackedScene" uid="uid://bix8ryww28cnm" path="res://numberbutton.tscn" id="10_amen3"]
-[ext_resource type="PackedScene" uid="uid://b0qokri8vjqj1" path="res://button check.tscn" id="11_3j7mq"]
+[ext_resource type="Material" uid="uid://cmushre60n2i6" path="res://backgreen.tres" id="1_78a4g"]
+[ext_resource type="PackedScene" uid="uid://bual2eoavelvk" path="res://world.tscn" id="2_5aris"]
+[ext_resource type="PackedScene" uid="uid://dvrkwn06uyp5h" path="res://camera.tscn" id="3_6vo7s"]
+[ext_resource type="Material" uid="uid://0wfedb4af7jq" path="res://Backbluer.tres" id="4_4trko"]
+[ext_resource type="Material" uid="uid://cpsdmruhcu315" path="res://Backwhite.tres" id="5_5fgid"]
+[ext_resource type="PackedScene" uid="uid://drdjmvmh04u56" path="res://button3d_back.tscn" id="6_7crly"]
+[ext_resource type="Texture2D" uid="uid://3opcmbbp5e28" path="res://kysymyspallot.png" id="7_cdf2p"]
+[ext_resource type="PackedScene" uid="uid://bcjpe54mu0d2i" path="res://question_field.tscn" id="8_pq1no"]
+[ext_resource type="Script" path="res://numberpic.gd" id="9_til6q"]
+[ext_resource type="PackedScene" uid="uid://bix8ryww28cnm" path="res://numberbutton.tscn" id="10_il1j4"]
+[ext_resource type="PackedScene" uid="uid://b0qokri8vjqj1" path="res://button check.tscn" id="11_amsex"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ivy47"]
-material = ExtResource("1_20fc7")
+material = ExtResource("1_78a4g")
 size = Vector2(10, 7)
 
 [sub_resource type="SystemFont" id="SystemFont_ulo4s"]
 subpixel_positioning = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xb7f6"]
-material = ExtResource("4_wydm4")
+material = ExtResource("4_4trko")
 size = Vector2(20, 20)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_k6lre"]
-material = ExtResource("5_byb2p")
+material = ExtResource("5_5fgid")
 size = Vector2(20, 20)
 
 [sub_resource type="SystemFont" id="SystemFont_r5p27"]
@@ -42,9 +42,9 @@ transform = Transform3D(5.38447, 0, 0, 0, -4.37114e-08, -0.565463, 0, 1, -2.4717
 mesh = SubResource("PlaneMesh_ivy47")
 skeleton = NodePath("../../..")
 
-[node name="World" parent="." instance=ExtResource("2_jk6f3")]
+[node name="World" parent="." instance=ExtResource("2_5aris")]
 
-[node name="Cam" parent="." instance=ExtResource("3_5p7er")]
+[node name="Cam" parent="." instance=ExtResource("3_6vo7s")]
 zoom_min = 25.0
 startzoom = -1.0
 startzoommod = 10.0
@@ -83,7 +83,7 @@ transform = Transform3D(2.83887, 0, 0, 0, -4.54773e-08, -1.87077, 0, 1.0404, -8.
 mesh = SubResource("PlaneMesh_k6lre")
 skeleton = NodePath("../..")
 
-[node name="SCbutton" parent="." instance=ExtResource("6_22vc7")]
+[node name="SCbutton" parent="." instance=ExtResource("6_7crly")]
 transform = Transform3D(1.49062, 0, 0, 0, 1.49062, 0, 0, 0, 1, -21.7355, 13.6697, 1.3294)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
@@ -93,7 +93,7 @@ alpha_hash_scale = 0.0
 alpha_antialiasing_mode = 1
 texture_filter = 1
 render_priority = 1
-texture = ExtResource("7_04vj5")
+texture = ExtResource("7_cdf2p")
 
 [node name="Label3D3" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.38413, -5.02965, 0.917847)
@@ -117,31 +117,37 @@ line_spacing = 300.0
 [node name="quizitems" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.11983, 3.76058, 2.8111)
 
-[node name="quizimput" parent="quizitems" instance=ExtResource("8_b5jsc")]
+[node name="quizimput" parent="quizitems" instance=ExtResource("8_pq1no")]
+qnum = 1
 
-[node name="quizimput2" parent="quizitems" instance=ExtResource("8_b5jsc")]
+[node name="quizimput2" parent="quizitems" instance=ExtResource("8_pq1no")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.58968, 0)
 index = 1
+qnum = 1
 
-[node name="quizimput3" parent="quizitems" instance=ExtResource("8_b5jsc")]
+[node name="quizimput3" parent="quizitems" instance=ExtResource("8_pq1no")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.22771, 0)
 index = 2
+qnum = 1
 
-[node name="quizimput4" parent="quizitems" instance=ExtResource("8_b5jsc")]
+[node name="quizimput4" parent="quizitems" instance=ExtResource("8_pq1no")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.4483, 0)
 index = 3
+qnum = 1
 
-[node name="quizimput5" parent="quizitems" instance=ExtResource("8_b5jsc")]
+[node name="quizimput5" parent="quizitems" instance=ExtResource("8_pq1no")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.9074, 0)
 index = 4
+qnum = 1
 
-[node name="quizimput6" parent="quizitems" instance=ExtResource("8_b5jsc")]
+[node name="quizimput6" parent="quizitems" instance=ExtResource("8_pq1no")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -17.4261, 0)
 index = 5
+qnum = 1
 
 [node name="Numberer" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.11983, 3.76058, 3.28473)
-script = ExtResource("9_d0xku")
+script = ExtResource("9_til6q")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Numberer"]
 transform = Transform3D(7.25582, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -6.91503, 9.01375, 4.76837e-07)
@@ -155,34 +161,42 @@ skeleton = NodePath("../../..")
 [node name="Node3D" type="Node3D" parent="Numberer/MeshInstance3D"]
 transform = Transform3D(0.13782, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.701877, 0, 0)
 
-[node name="Numberbutton" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("10_amen3")]
+[node name="Numberbutton" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("10_il1j4")]
 transform = Transform3D(1.00171, 0, 0, 0, 1.00171, 0, 0, 0, 1.00171, -4.09858, 6.5982, 0.111603)
 namee = "PEHMEÄ SUULAKI "
+qnum = 1
 
-[node name="Numberbutton2" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("10_amen3")]
+[node name="Numberbutton2" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("10_il1j4")]
 transform = Transform3D(1.00171, 0, 0, 0, 1.00171, 0, 0, 0, 1.00171, -4.09858, 4.07185, 0.111602)
 number = 2
 namee = "KURKUNKANSI "
+qnum = 1
 
-[node name="Numberbutton3" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("10_amen3")]
+[node name="Numberbutton3" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("10_il1j4")]
 transform = Transform3D(1.00171, 0, 0, 0, 1.00171, 0, 0, 0, 1.00171, -4.09858, 1.41252, 0.111602)
 number = 3
 namee = "HENKITORVI "
+qnum = 1
 
-[node name="Numberbutton4" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("10_amen3")]
+[node name="Numberbutton4" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("10_il1j4")]
 transform = Transform3D(1.00171, 0, 0, 0, 1.00171, 0, 0, 0, 1.00171, -4.09858, -1.20248, 0.111602)
 number = 4
-namee = "NENÄONTELO "
+namee = "NENÄONTELO"
+qnum = 1
 
-[node name="Numberbutton5" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("10_amen3")]
+[node name="Numberbutton5" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("10_il1j4")]
 transform = Transform3D(1.00171, 0, 0, 0, 1.00171, 0, 0, 0, 1.00171, -4.09858, -3.81748, 0.111602)
 number = 5
 namee = "SUUONTELO "
+qnum = 1
 
-[node name="Numberbutton6" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("10_amen3")]
+[node name="Numberbutton6" parent="Numberer/MeshInstance3D/Node3D" instance=ExtResource("10_il1j4")]
 transform = Transform3D(1.00171, 0, 0, 0, 1.00171, 0, 0, 0, 1.00171, -4.09858, -6.4768, 0.111602)
 number = 6
-namee = "KURKUNPÄÄ "
+namee = "ÄÄNIHUULET"
+qnum = 1
 
-[node name="checkbutton" parent="." instance=ExtResource("11_3j7mq")]
+[node name="checkbutton" parent="." instance=ExtResource("11_amsex")]
 transform = Transform3D(1.40878, 0, 0, 0, 1.40878, 0, 0, 0, 1, 8.37033, -17.9106, 2)
+qnum = 1
+n_p_path = "res://q.2.nielnormfys.tscn"

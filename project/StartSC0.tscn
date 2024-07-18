@@ -200,7 +200,7 @@ font_size = 150
 outline_size = 0
 
 [node name="BBack3" type="MeshInstance3D" parent="Node3D/MeshInstance3D"]
-transform = Transform3D(-6.24173, 0, 0, 0, 1, 7.10543e-15, 0, 0, 1.65025, 0, 0.5, 2.59136)
+transform = Transform3D(-6.24173, 0, 0, 0, 1, 1.42109e-14, 0, 0, 1.65025, 0, 0.5, 2.59136)
 mesh = SubResource("PlaneMesh_6ey0g")
 
 [connection signal="input_event" from="Node3D/Buton/BBack/Area3D" to="Node3D/Buton" method="_on_area_3d_input_event"]

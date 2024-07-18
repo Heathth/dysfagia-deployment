@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://brqdhkqcetnlm" path="res://backgray.tres" id="1_b0gte"]
 [ext_resource type="Script" path="res://numcheck.gd" id="2_qifdg"]
-[ext_resource type="Material" uid="uid://cif70qswmk5sq" path="res://Backblueaaa.tres" id="3_gxdhc"]
+[ext_resource type="Material" uid="uid://c1g1llilwiy3m" path="res://kiduhok.tres" id="3_81keb"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mf10w"]
 material = ExtResource("1_b0gte")
@@ -18,7 +18,7 @@ material = SubResource("StandardMaterial3D_i3pup")
 size = Vector2(21, 2.5)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hsdgw"]
-material = ExtResource("3_gxdhc")
+material = ExtResource("3_81keb")
 size = Vector2(20, 2.3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_80t4m"]
@@ -62,5 +62,6 @@ font_size = 350
 outline_size = 0
 horizontal_alignment = 0
 
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
 [connection signal="mouse_entered" from="Area3D" to="." method="_on_area_3d_mouse_entered"]
 [connection signal="mouse_exited" from="Area3D" to="." method="_on_area_3d_mouse_exited"]

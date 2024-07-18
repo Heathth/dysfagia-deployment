@@ -1,6 +1,8 @@
 extends Node3D
 
 var outline := false
+@export var qnum := 0
+@export var n_p_path = "path"
 
 func _on_area_3d_mouse_entered():
 
@@ -25,17 +27,19 @@ func _on_area_3d_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed == true:
 			var correct = true
-			for n in Global.answerstate.size():
-				if not Global.answerstate[n] == Global.answersq1[n]:
+			for n in Global.m_answerstate[qnum].size():
+				if not Global.m_answerstate[qnum][n] == Global.m_answersq[qnum][n]:
 					correct = false
 			if correct == true:
 				print("correct")
-				Global.q1 = true
+				Global.quizpage = qnum
 				$Jatka.show()
 			else:
 				print("wrong")
+				print(Global.m_answerstate[qnum])
 				$"Väärin".show()
-				Global.answerstate = [0, 0, 0, 0, 0, 0]
+				for n in Global.m_answerstate[qnum].size():
+					Global.m_answerstate[qnum].fill(0)
 				await get_tree().create_timer(0.6).timeout
 				$"Väärin".hide()
 

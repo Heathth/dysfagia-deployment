@@ -300,5 +300,6 @@ transform = Transform3D(0.999999, 0, 0, 0, 1, 1.35525e-20, 0, -3.38813e-21, 0.99
 [node name="SCbutton" parent="." instance=ExtResource("7_u7aoc")]
 transform = Transform3D(2.53854, 0, 0, 0, 2.53854, 0, 0, 0, 1, -5.04976, -1.26369, 0.545417)
 visible = false
-path1 = "res://quizpage1.tscn"
-path2 = "res://quizpage2.tscn"
+path1 = "res://q.1.anatomy.tscn"
+path2 = "res://q.2.nielnormfys.tscn"
+path3 = "res://q.3.nielnormfys.tscn"
