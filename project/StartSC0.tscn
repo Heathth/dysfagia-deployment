@@ -198,6 +198,9 @@ antamiseen noin 5 min. "
 font = SubResource("SystemFont_aqvki")
 font_size = 150
 outline_size = 0
+line_spacing = 1.0
+autowrap_mode = 3
+width = 5000.0
 
 [node name="BBack3" type="MeshInstance3D" parent="Node3D/MeshInstance3D"]
 transform = Transform3D(-6.24173, 0, 0, 0, 1, 1.42109e-14, 0, 0, 1.65025, 0, 0.5, 2.59136)
